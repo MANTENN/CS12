@@ -36,30 +36,33 @@ public class QuadraticEquation {
    
    public double getDiscriminant() {
       double r = Math.pow(this.b, 2) - 4 * a * c;
-      return r >= 0 ? r : 0;
+      return r >= 0 ? Math.sqrt(r) : 0;
    }
    
    public double getRoot1() {
-      double r = -b * Math.sqrt(getDiscriminant()) / 2.0 * a;
-      if(r < 0) 
-         return 0;
-      return r;
+      double d = this.getDiscriminant();
+      if(d == 0)
+         return (-b - d) / (2.0 * a);
+      return 0;
    }
    
    public double getRoot2() {
-      double r = b * Math.sqrt(getDiscriminant()) / 2.0 * a;
-      if(r < 0)
-         return 0;
-      return r;
+      double d = this.getDiscriminant();
+      if(d == 0)
+         return (-b + d) / (2.0 * a);
+      return 0;
    }
    
    public boolean equals(QuadraticEquation e) {
       return this.a == e.getA() && this.b == e.getB() && this.c == e.getC();
    }
    public String getEquation() {
-      return this.a + "x^2  + " + this.b + "x+ " + this.c;
+      return this.a + "x\u00B2 " + this.printableNum(this.b) + "x " + this.printableNum(this.c);
    }
    public String toString() {
       return "";
+   }
+   public String printableNum(double num) {
+      return num >= 0 ? "+ "+num : " - " +num;
    }
 }
