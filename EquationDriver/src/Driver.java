@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Driver {
    public static void main(String[] args) throws IOException {
-      QuadraticEquation[] quadraticEquations = new QuadraticEquation[10];
+      QuadraticEquation[] quadraticEquations = new QuadraticEquation[11];
       fillArray(quadraticEquations);
       getResult(quadraticEquations);
    }

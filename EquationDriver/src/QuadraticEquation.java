@@ -57,7 +57,7 @@ public class QuadraticEquation {
       return this.a == e.getA() && this.b == e.getB() && this.c == e.getC();
    }
    public String getEquation() {
-      return this.a + "x^2  + " + this.b + "x+ " + this.c;
+      return this.a + "x\u00B2  + " + this.b + "x+ " + this.c;
    }
    public String toString() {
       return "";
